@@ -17,6 +17,8 @@ namespace ProiectVisual.Controllers
         };
 
         //Endpoint
+
+        //Get
         [HttpGet]
         public List<Member> Get()
         { return members; }
@@ -38,8 +40,76 @@ namespace ProiectVisual.Controllers
         {
             return members.Where(x => x.First_Name.ToLower().Equals(first_name) && x.Last_Name.ToLower().Equals(last_name)).ToList();
         }
-        
 
+        [HttpGet("filter /{status}")]
+        public List<Member> GetWithFilters(string status)
+        {
+            return members.Where(x => x.Status.ToLower().Equals(status.ToLower())).ToList();
+        }
+
+        [HttpGet("fromRouteWithId/{id}")]
+        public Member GetByIdWithFromRoute([FromRoute] int id)
+        {
+            Member membru = members.FirstOrDefault(x => x.Id.Equals(id));
+            return membru;
+        }
+
+        [HttpGet("fromHeader")]
+        public Member GetByIdWithFromHeader([FromHeader] int id)
+        {
+            return members.FirstOrDefault(x => x.Id.Equals(id));
+        }
+
+        [HttpGet("fromQuery")]
+        public Member GetByIdWithFromQuery([FromQuery] int id)
+        {
+            return members.FirstOrDefault(x => x.Id.Equals(id));
+        }
+
+        //Status codes
+
+        //200
+        [HttpGet("StatusCodeOK")]
+        public IActionResult StatusCodeOK()
+        {
+            return Ok("All good");
+        }
+
+        //204
+        [HttpGet("NoContent")]
+        public new IActionResult NoContent()
+        {
+            return NoContent();
+        }
+
+        //404
+        [HttpGet("NotFound")]
+        public IActionResult StatusCodeNotFound()
+        {
+            return NotFound();
+        }
+
+        //403
+        [HttpGet("Forbid")]
+        public IActionResult StatusCodeForbid()
+        {
+            return Forbid();
+        }
+
+        //400
+        [HttpGet("BadRequest")]
+        public IActionResult StatusCodeBadRequest()
+        {
+            return BadRequest();
+        }
+
+        //Create
+        [HttpPost]
+        public IActionResult Add(Member member)
+        {
+            members.Add(member);
+            return Ok(members);
+        }
 
 
     }
