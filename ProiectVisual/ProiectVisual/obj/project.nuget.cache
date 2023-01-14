@@ -1,11 +1,14 @@
 {
   "version": 2,
-  "dgSpecHash": "x6aLK63BETtn5RPw7h801PPmRq3+onQuLrSggJW5waGJ3r4qCS7pZ5ZAjTxL4T+Mj4vDro0zcLhRbpVXzzq6ng==",
+  "dgSpecHash": "hvrN7P2ATTaHZZ4MjU4HyjBOZ3NY9TfxS+AJg9LpgmAPTOZPgXXyxzV7glY9++tcrhuTMVWJp8eyzccBCbXiFA==",
   "success": true,
   "projectFilePath": "C:\\Users\\Flavi\\Desktop\\FMM\\WEBNET\\Proiect.NET\\ProiectVisual\\ProiectVisual\\ProiectVisual.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\Flavi\\.nuget\\packages\\microsoft.aspnetcore.jsonpatch\\7.0.2\\microsoft.aspnetcore.jsonpatch.7.0.2.nupkg.sha512",
+    "C:\\Users\\Flavi\\.nuget\\packages\\microsoft.csharp\\4.7.0\\microsoft.csharp.4.7.0.nupkg.sha512",
     "C:\\Users\\Flavi\\.nuget\\packages\\microsoft.extensions.apidescription.server\\3.0.0\\microsoft.extensions.apidescription.server.3.0.0.nupkg.sha512",
     "C:\\Users\\Flavi\\.nuget\\packages\\microsoft.openapi\\1.2.3\\microsoft.openapi.1.2.3.nupkg.sha512",
+    "C:\\Users\\Flavi\\.nuget\\packages\\newtonsoft.json\\13.0.1\\newtonsoft.json.13.0.1.nupkg.sha512",
     "C:\\Users\\Flavi\\.nuget\\packages\\swashbuckle.aspnetcore\\6.2.3\\swashbuckle.aspnetcore.6.2.3.nupkg.sha512",
     "C:\\Users\\Flavi\\.nuget\\packages\\swashbuckle.aspnetcore.swagger\\6.2.3\\swashbuckle.aspnetcore.swagger.6.2.3.nupkg.sha512",
     "C:\\Users\\Flavi\\.nuget\\packages\\swashbuckle.aspnetcore.swaggergen\\6.2.3\\swashbuckle.aspnetcore.swaggergen.6.2.3.nupkg.sha512",

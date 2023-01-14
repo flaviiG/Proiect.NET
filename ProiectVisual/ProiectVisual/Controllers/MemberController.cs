@@ -1,6 +1,8 @@
 ﻿using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.JsonPatch;
 using Microsoft.AspNetCore.Mvc;
 using ProiectVisual.Models;
+using System.Diagnostics.Metrics;
 
 namespace ProiectVisual.Controllers
 {
@@ -111,6 +113,64 @@ namespace ProiectVisual.Controllers
             return Ok(members);
         }
 
+        [HttpPost("fromBody")]
+        public IActionResult AddWithFromBody([FromBody] Member member)
+        {
+            members.Add(member);
+            return Ok(members);
+        }
 
+        [HttpPost("fromForm")]
+        public IActionResult AddWithFromForm([FromForm] Member member)
+        {
+            members.Add(member);
+            return Ok(members);
+        }
+
+        //Update Full
+        [HttpPost("update")]
+        public IActionResult Update([FromBody] Member member)
+        {
+            var memberIndex = members.FindIndex(x => x.Id == member.Id);
+            members[memberIndex] = member;
+
+            return Ok(members);
+        }
+
+        //Update async
+        [HttpPost("updateAsync")]
+        public async Task<IActionResult> UpdateAsync([FromBody] Member member)
+        {
+            var memberIndex = members.FindIndex(x => x.Id == member.Id);
+            members[memberIndex] = member;
+
+            return Ok(members);
+        }
+
+        //Update Partial
+        [HttpPatch("{id:int}")]
+        public IActionResult Patch([FromRoute] int id, [FromBody] JsonPatchDocument<Member> member)
+        {
+            if(member != null) 
+            {
+                var memberToUpdate = members.FirstOrDefault(x => x.Id == id);
+                member.ApplyTo(memberToUpdate);
+                
+
+                return Ok(members);
+            }
+            else
+            {
+                return BadRequest();
+            }
+        }
+
+        [HttpDelete]
+        public IActionResult Delete(int id_member)
+        {
+            var memberToDelete = members.FirstOrDefault(x => x.Id.Equals(id_member));
+            members.Remove(memberToDelete); 
+            return Ok(members);
+        }
     }
 }

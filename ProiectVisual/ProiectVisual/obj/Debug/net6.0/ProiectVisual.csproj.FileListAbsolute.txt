@@ -25,3 +25,5 @@ C:\Users\Flavi\Desktop\FMM\WEBNET\Proiect.NET\ProiectVisual\ProiectVisual\obj\De
 C:\Users\Flavi\Desktop\FMM\WEBNET\Proiect.NET\ProiectVisual\ProiectVisual\obj\Debug\net6.0\ProiectVisual.pdb
 C:\Users\Flavi\Desktop\FMM\WEBNET\Proiect.NET\ProiectVisual\ProiectVisual\obj\Debug\net6.0\ProiectVisual.genruntimeconfig.cache
 C:\Users\Flavi\Desktop\FMM\WEBNET\Proiect.NET\ProiectVisual\ProiectVisual\obj\Debug\net6.0\ref\ProiectVisual.dll
+C:\Users\Flavi\Desktop\FMM\WEBNET\Proiect.NET\ProiectVisual\ProiectVisual\bin\Debug\net6.0\Microsoft.AspNetCore.JsonPatch.dll
+C:\Users\Flavi\Desktop\FMM\WEBNET\Proiect.NET\ProiectVisual\ProiectVisual\bin\Debug\net6.0\Newtonsoft.Json.dll
