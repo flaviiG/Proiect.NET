@@ -1,8 +1,9 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using ProiectVisual.Models.Base;
+using System.ComponentModel.DataAnnotations;
 
 namespace ProiectVisual.Models
 {
-    public class Member
+    public class Member : BaseEntity
     {
         [Required]
         public int Id { get; set; }

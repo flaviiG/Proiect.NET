@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.JsonPatch;
 using Microsoft.AspNetCore.Mvc;
+using ProiectVisual.Data;
 using ProiectVisual.Models;
 using System.Diagnostics.Metrics;
 
@@ -172,5 +173,14 @@ namespace ProiectVisual.Controllers
             members.Remove(memberToDelete); 
             return Ok(members);
         }
+
+        private Context _context;
+
+        public MemberController(Context context)
+        {
+            _context = context;
+        }
+
+
     }
 }
