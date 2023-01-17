@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.JsonPatch;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using ProiectVisual.Data;
 using ProiectVisual.Models;
 using System.Diagnostics.Metrics;
@@ -181,6 +182,10 @@ namespace ProiectVisual.Controllers
             _context = context;
         }
 
-
+        [HttpGet]
+        public async Task<IActionResult> GetMembers()
+        {
+            return Ok(await _context.Members.ToListAsync());
+        }
     }
 }
