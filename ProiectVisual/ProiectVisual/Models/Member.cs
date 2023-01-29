@@ -10,7 +10,8 @@ namespace ProiectVisual.Models
         public string? First_Name { get; set; }
         public string? Last_Name { get; set; }
         public string? Status { get; set; }
-
-        public List<Job>? Jobs { get; set; }
+        public Department Department { get; set; }
+        public int DepartmentId { get; set; }  
+        public ICollection<ModelsRelation> ModelsRelation { get; set; }
     }
 }

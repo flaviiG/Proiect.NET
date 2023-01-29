@@ -1,6 +1,10 @@
 ﻿using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.JsonPatch;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
+using ProiectVisual.Data;
 using ProiectVisual.Models;
+using System.Diagnostics.Metrics;
 
 namespace ProiectVisual.Controllers
 {
@@ -8,31 +12,18 @@ namespace ProiectVisual.Controllers
     [ApiController]
     public class JobsController : ControllerBase
     {
-        public static List<Job> jobs = new List<Job>
-        {
-            new Job{Id=1, Name="Video Editing"},
-            new Job{Id=2, Name="Streaming"},
-            new Job{Id=3, Name="Player"},
-            new Job{Id=4, Name="Graphic Designer"},
-            new Job{Id=5, Name="Content Creating"}
-        };
+        private Context _context;
 
-        public static List<Member> members = new List<Member>
+        public JobsController(Context context)
         {
-            new Member{Id=1, Jobs=new List<Job> {jobs[0]}},
-            new Member{Id=2, Jobs=new List<Job> {jobs[1]}}
-        };
-
-        [HttpGet]
-        public List<Job> Get()
-        {
-            return jobs;
+            _context = context;
         }
 
-        [HttpGet("jobs/{member_id}")]
-        public IActionResult GetJobsByMember(int member_id)
+        [HttpGet("jobs")]
+        public async Task<IActionResult> GetJobs()
         {
-            return Ok(members.FirstOrDefault(x => x.Id.Equals(member_id))?.Jobs);
+            return Ok(await _context.Jobs.ToListAsync());
         }
+
     }
 }
