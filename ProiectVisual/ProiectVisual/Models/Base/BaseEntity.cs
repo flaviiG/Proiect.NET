@@ -10,9 +10,9 @@ namespace ProiectVisual.Models.Base
         public Guid Id { get; set; }
 
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public DateTime DateCreated { get; set; }
+        public DateTime DateCreated { get; set; } = DateTime.Now;
 
         [DatabaseGenerated(DatabaseGeneratedOption.Computed)]
-        public DateTime? DateModified { get; set; }
+        public DateTime? DateModified { get; set; } = DateTime.Now;
     }
 }
