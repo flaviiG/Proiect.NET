@@ -12,6 +12,6 @@ namespace ProiectVisual.Models
         public string? Status { get; set; }
         public Department? Department { get; set; }
         public int? DepartmentId { get; set; }  
-        public ICollection<ModelsRelation>? ModelsRelation { get; set; }
+        public ICollection<ModelsRelation>?  ModelsRelation { get; set; }
     }
 }

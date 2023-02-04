@@ -1,5 +1,6 @@
 using Microsoft.EntityFrameworkCore;
 using ProiectVisual.Data;
+using ProiectVisual.Repositories.MemberRepository;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -10,6 +11,11 @@ builder.Services.AddDbContext<Context>(options => options.UseSqlServer(builder.C
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
+
+//repositories
+builder.Services.AddTransient<IMemberRepository, MemberRepository>();
+builder.Services.AddSingleton<IMemberRepository, MemberRepository>();
+builder.Services.AddScoped<IMemberRepository, MemberRepository>();
 
 var app = builder.Build();
 
