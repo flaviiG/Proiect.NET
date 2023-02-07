@@ -18,9 +18,24 @@ namespace ProiectVisual.Repositories.MemberRepository
 
         public List<Member> GetAlWithJoin()
         {
-            var result = _table.Join(_context.Departments, member => member.Id, dep => dep.Members.Select(x => x.Id), (member, dep) => new { member, dep }).Select(obj => obj.member);
-            return result.toList();
+            var result = _table.Join(_context.Departments, member => member.DepartmentId, dep => dep.Id,
+                (member, dep) => new { member, dep }).Select(obj => obj.member);
+
+            return result.ToList();
         }
-      
+
+        public List<Member> GetByStatus(string status)
+        {
+            var result = from member in _table
+                         where member.Status == status
+                         select member;
+            return result.ToList();
+        }
+        
+        public Member GetById(int id)
+        {
+            return _table.FirstOrDefault(x => x.Id.Equals(id));
+
+        }
     }
 }

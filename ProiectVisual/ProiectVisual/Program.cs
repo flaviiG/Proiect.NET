@@ -1,6 +1,10 @@
 using Microsoft.EntityFrameworkCore;
 using ProiectVisual.Data;
 using ProiectVisual.Repositories.MemberRepository;
+using ProiectVisual.Services.MemberService;
+using ProiectVisual.Services.MemberServices;
+using Newtonsoft.Json.Serialization;
+
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -14,8 +18,14 @@ builder.Services.AddSwaggerGen();
 
 //repositories
 builder.Services.AddTransient<IMemberRepository, MemberRepository>();
-builder.Services.AddSingleton<IMemberRepository, MemberRepository>();
-builder.Services.AddScoped<IMemberRepository, MemberRepository>();
+
+//services
+builder.Services.AddTransient<IMemberService, MemberService>();
+
+builder.Services.AddControllers(options =>
+{
+    options.ReturnHttpNotAcceptable = true;
+}).AddNewtonsoftJson();
 
 var app = builder.Build();
 

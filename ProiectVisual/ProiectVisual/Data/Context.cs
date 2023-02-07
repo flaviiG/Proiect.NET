@@ -23,7 +23,9 @@ namespace ProiectVisual.Data
             //One to Many
             modelBuilder.Entity<Department>()
                 .HasMany(dp => dp.Members)
-                .WithOne(mb => mb.Department);
+                .WithOne(mb => mb.Department)
+                .HasForeignKey(mb => mb.DepartmentId);
+                 
 
 
             //Many to Many
