@@ -47,9 +47,9 @@ namespace ProiectVisual.Controllers
             return Ok(member);
         }
       [HttpGet("byStatus/{status}")]
-        public List<Member> GetByStatus(string status)
+        public async Task<IActionResult> GetByStatus(string status)
         {
-            return _memberService.GetDataMappedByStatus(status);
+            return Ok(_memberService.GetDataMappedByStatus(status));
         }
 
         [HttpPost("CreateMember")]
@@ -77,7 +77,7 @@ namespace ProiectVisual.Controllers
 
 
         //Delete
-
+         
 
     }
 }

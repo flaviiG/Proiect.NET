@@ -29,7 +29,7 @@ namespace ProiectVisual.Repositories.MemberRepository
             var result = from member in _table
                          where member.Status == status
                          select member;
-            return result.ToList();
+            return result.ToList<Member>();
         }
         
         public Member GetById(int id)

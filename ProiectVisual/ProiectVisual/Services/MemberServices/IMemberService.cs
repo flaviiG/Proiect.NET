@@ -6,7 +6,7 @@ namespace ProiectVisual.Services.MemberServices
 {
     public interface IMemberService
     {
-        List<Member> GetDataMappedByStatus(string status);
+        Task<List<Member>> GetDataMappedByStatus(string status);
         Task<Member> UpdateMember(int id, JsonPatchDocument memberDocument);
 
     }

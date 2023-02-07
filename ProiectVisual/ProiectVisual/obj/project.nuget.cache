@@ -1,11 +1,14 @@
 {
   "version": 2,
-  "dgSpecHash": "X+Dk/KuOt0dTiqzHvIMoxQxhGQ8JhEsuec6ey6g2F9Ui7r/Y4ubPmivzVgwtNbisWTw8FMzxqUt5DsPFeJPc3Q==",
+  "dgSpecHash": "JhWIN6wIIHFmbxyNvYuqPeD9DTjeNdtM/gWTtM/rrMgGSH8+wGSHqtbkN6of40tDBUf2m5pGrv9OempjszLm5g==",
   "success": true,
   "projectFilePath": "C:\\Users\\Flavi\\Desktop\\FMM\\WEBNET\\Proiect.NET\\ProiectVisual\\ProiectVisual\\ProiectVisual.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\Flavi\\.nuget\\packages\\automapper\\12.0.1\\automapper.12.0.1.nupkg.sha512",
+    "C:\\Users\\Flavi\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\12.0.0\\automapper.extensions.microsoft.dependencyinjection.12.0.0.nupkg.sha512",
     "C:\\Users\\Flavi\\.nuget\\packages\\azure.core\\1.24.0\\azure.core.1.24.0.nupkg.sha512",
     "C:\\Users\\Flavi\\.nuget\\packages\\azure.identity\\1.6.0\\azure.identity.1.6.0.nupkg.sha512",
+    "C:\\Users\\Flavi\\.nuget\\packages\\bcrypt.net-core\\1.6.0\\bcrypt.net-core.1.6.0.nupkg.sha512",
     "C:\\Users\\Flavi\\.nuget\\packages\\humanizer.core\\2.14.1\\humanizer.core.2.14.1.nupkg.sha512",
     "C:\\Users\\Flavi\\.nuget\\packages\\microsoft.aspnetcore.jsonpatch\\7.0.2\\microsoft.aspnetcore.jsonpatch.7.0.2.nupkg.sha512",
     "C:\\Users\\Flavi\\.nuget\\packages\\microsoft.aspnetcore.mvc.newtonsoftjson\\6.0.13\\microsoft.aspnetcore.mvc.newtonsoftjson.6.0.13.nupkg.sha512",

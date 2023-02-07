@@ -1,13 +1,12 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using ProiectVisual.Models.Base;
+using System.ComponentModel.DataAnnotations;
 
 namespace ProiectVisual.Models
 {
-    public class Department
+    public class Department : BaseEntity
     {
-        [Required]
-        public int Id { get; set; }
         public string Name { get; set; }
-        public ICollection<Member> Members { get; set; }
-        public Event Event { get; set; }  
+        public ICollection<Member>? Members { get; set; }
+        public Event? Event { get; set; }  
     }
 }

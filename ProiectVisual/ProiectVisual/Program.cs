@@ -4,7 +4,8 @@ using ProiectVisual.Repositories.MemberRepository;
 using ProiectVisual.Services.MemberService;
 using ProiectVisual.Services.MemberServices;
 using Newtonsoft.Json.Serialization;
-
+using ProiectVisual.Helper.Extensions;
+using ProiectVisual.Helper.Seeders;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -16,11 +17,10 @@ builder.Services.AddDbContext<Context>(options => options.UseSqlServer(builder.C
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
-//repositories
-builder.Services.AddTransient<IMemberRepository, MemberRepository>();
-
-//services
-builder.Services.AddTransient<IMemberService, MemberService>();
+builder.Services.AddRepositories();
+builder.Services.AddServices();
+builder.Services.AddSeeders();
+builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
 
 builder.Services.AddControllers(options =>
 {
@@ -43,3 +43,14 @@ app.UseAuthorization();
 app.MapControllers();
 
 app.Run();
+
+void SeedData(IHost app)
+{
+    var scopedFactory = app.Services.GetService<IServiceScopeFactory>();
+
+    using (var scope = scopedFactory.CreateScope())
+    {
+        var service = scope.ServiceProvider.GetService<MemberSeeder>();
+        service.seedInitialMembers();
+    }
+}

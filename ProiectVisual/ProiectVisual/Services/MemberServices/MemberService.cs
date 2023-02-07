@@ -1,4 +1,6 @@
 ﻿using Microsoft.AspNetCore.JsonPatch;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using ProiectVisual.Data;
 using ProiectVisual.Models;
 using ProiectVisual.Models.DTOs;
@@ -30,9 +32,10 @@ namespace ProiectVisual.Services.MemberService
             _memberRepository = memberRepository;
             _context = context;
         }
-        public List<Member> GetDataMappedByStatus(string status)
+        public async Task<List<Member>> GetDataMappedByStatus(string status)
         {
-            return _memberRepository.GetByStatus(status);
+            var result = _memberRepository.GetByStatus(status);
+            return result;
         }
 
         public async Task<Member> UpdateMember(int id, JsonPatchDocument memberDocument)
