@@ -4,6 +4,7 @@ using ProiectVisual.Services.MemberService;
 using ProiectVisual.Services.MemberServices;
 using ProiectVisual.Helper.Seeders;
 using ProiectVisual.Helper.Mapper;
+using ProiectVisual.Services.UserService;
 
 namespace ProiectVisual.Helper.Extensions
 {
@@ -18,6 +19,7 @@ namespace ProiectVisual.Helper.Extensions
         public static IServiceCollection AddServices(this IServiceCollection services)
         {
             services.AddTransient<IMemberService, MemberService>();
+            services.AddTransient<IUserService, UserService>();
             return services;
         }
 
