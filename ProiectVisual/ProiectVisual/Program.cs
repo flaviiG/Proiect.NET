@@ -6,6 +6,10 @@ using ProiectVisual.Services.MemberServices;
 using Newtonsoft.Json.Serialization;
 using ProiectVisual.Helper.Extensions;
 using ProiectVisual.Helper.Seeders;
+using ProiectVisual.Helper;
+using ProiectVisual.Repositories.UserRepository;
+using ProiectVisual.Helper.JwtToken;
+using ProiectVisual.Helper.JwtUtils;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -19,8 +23,10 @@ builder.Services.AddSwaggerGen();
 
 builder.Services.AddRepositories();
 builder.Services.AddServices();
+builder.Services.AddTransient<IJwtUtils, JwtUtils>();
 builder.Services.AddSeeders();
 builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
+builder.Services.Configure<AppSettings>(builder.Configuration.GetSection("AppSettings"));
 
 builder.Services.AddControllers(options =>
 {

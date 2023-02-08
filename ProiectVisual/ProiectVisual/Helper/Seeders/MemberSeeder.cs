@@ -21,14 +21,14 @@ namespace ProiectVisual.Helper.Seeders
                     First_Name = "David",
                     Last_Name = "Pham",
                     Status = "VIP",
-                    DepartmentId = 1
+                    DepartmentId = Guid.NewGuid(),
                 };
                 var member2 = new Member
                 {
                     First_Name = "Vavalutzu",
                     Last_Name = "Lescai",
                     Status = "VIP",
-                    DepartmentId = 1
+                    DepartmentId = Guid.NewGuid()
                 };
                 _context.Members.Add(member1);
                 _context.Members.Add(member2);

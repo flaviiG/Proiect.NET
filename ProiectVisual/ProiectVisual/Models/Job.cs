@@ -1,8 +1,10 @@
-﻿namespace ProiectVisual.Models
+﻿using ProiectVisual.Models.Base;
+
+namespace ProiectVisual.Models
 {
-    public class Job
+    public class Job : BaseEntity
     {
-        public int Id { get; set; }
+        public Guid Id { get; set; }
         public string? Name { get; set; }
         public ICollection<ModelsRelation> ModelsRelation { get; set; }
 

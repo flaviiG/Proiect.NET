@@ -86,3 +86,4 @@ C:\Users\Flavi\Desktop\FMM\WEBNET\Proiect.NET\ProiectVisual\ProiectVisual\bin\De
 C:\Users\Flavi\Desktop\FMM\WEBNET\Proiect.NET\ProiectVisual\ProiectVisual\bin\Debug\net6.0\Newtonsoft.Json.Bson.dll
 C:\Users\Flavi\Desktop\FMM\WEBNET\Proiect.NET\ProiectVisual\ProiectVisual\bin\Debug\net6.0\AutoMapper.dll
 C:\Users\Flavi\Desktop\FMM\WEBNET\Proiect.NET\ProiectVisual\ProiectVisual\bin\Debug\net6.0\AutoMapper.Extensions.Microsoft.DependencyInjection.dll
+C:\Users\Flavi\Desktop\FMM\WEBNET\Proiect.NET\ProiectVisual\ProiectVisual\bin\Debug\net6.0\BCrypt.Net-Core.dll

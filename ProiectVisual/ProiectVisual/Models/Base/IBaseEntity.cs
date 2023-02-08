@@ -2,7 +2,7 @@
 {
     public interface IBaseEntity
     {
-        public int Id { get; set; }
+        public Guid Id { get; set; }
         DateTime DateCreated { get; set; }
         DateTime? DateModified { get; set; }
 

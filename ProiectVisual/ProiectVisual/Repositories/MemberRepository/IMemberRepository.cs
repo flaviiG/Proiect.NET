@@ -8,6 +8,6 @@ namespace ProiectVisual.Repositories.MemberRepository
         List<Member> GetAlWithInclude();
         List<Member> GetAlWithJoin();
         List<Member> GetByStatus(string satus);
-        public Member GetById(int id);
+        public Member GetById(Guid id);
     }
 }

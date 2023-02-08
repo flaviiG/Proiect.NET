@@ -38,7 +38,7 @@ namespace ProiectVisual.Services.MemberService
             return result;
         }
 
-        public async Task<Member> UpdateMember(int id, JsonPatchDocument memberDocument)
+        public async Task<Member> UpdateMember(Guid id, JsonPatchDocument memberDocument)
         {
             Member memberToUpdate = _memberRepository.GetById(id);
             if (memberToUpdate == null)

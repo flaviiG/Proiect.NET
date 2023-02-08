@@ -41,7 +41,7 @@ namespace ProiectVisual.Controllers
         }
 
         [HttpGet("byId/{id}")]
-        public IActionResult GetById(int id)
+        public IActionResult GetById(Guid id)
         {
             var member = _context.Members.FirstOrDefault(x => x.Id == id);
             return Ok(member);
@@ -65,7 +65,7 @@ namespace ProiectVisual.Controllers
         }
         //Update
         [HttpPatch("{id}")]
-        public async Task<IActionResult> PatchMember([FromRoute] int id, [FromBody] JsonPatchDocument memberDocument)
+        public async Task<IActionResult> PatchMember([FromRoute] Guid id, [FromBody] JsonPatchDocument memberDocument)
         {
             var updatedMember = await _memberService.UpdateMember(id, memberDocument);
             if(updatedMember == null)

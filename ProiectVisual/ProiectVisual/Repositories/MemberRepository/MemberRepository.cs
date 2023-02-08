@@ -32,7 +32,7 @@ namespace ProiectVisual.Repositories.MemberRepository
             return result.ToList<Member>();
         }
         
-        public Member GetById(int id)
+        public Member GetById(Guid id)
         {
             return _table.FirstOrDefault(x => x.Id.Equals(id));
 

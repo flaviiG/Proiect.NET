@@ -1,6 +1,8 @@
 ﻿namespace ProiectVisual.Models.Enums
 {
-    public class Role
+    public enum Role
     {
+        Admin,
+        User
     }
 }

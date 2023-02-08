@@ -24,11 +24,6 @@ namespace ProiectVisual.Controllers
         {
             return Ok(await _context.Jobs.ToListAsync());
         }
-        //Create
-
-        //Update
-
-        //Delete
 
     }
 }

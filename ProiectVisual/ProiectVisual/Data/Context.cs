@@ -9,6 +9,7 @@ namespace ProiectVisual.Data
         public DbSet<Job> Jobs {get; set;}
         public DbSet<Department> Departments {get; set;}
         public DbSet<Event> Events {get; set;}
+        public DbSet<User> Users {get; set;}
 
 
 

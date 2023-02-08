@@ -5,6 +5,7 @@ using ProiectVisual.Services.MemberServices;
 using ProiectVisual.Helper.Seeders;
 using ProiectVisual.Helper.Mapper;
 using ProiectVisual.Services.UserService;
+using ProiectVisual.Repositories.UserRepository;
 
 namespace ProiectVisual.Helper.Extensions
 {
@@ -12,14 +13,17 @@ namespace ProiectVisual.Helper.Extensions
     {
         public static IServiceCollection AddRepositories(this IServiceCollection services)
         {
-            services.AddTransient<IMemberRepository, MemberRepository>();
+            services.AddTransient<IMemberService, MemberService>();
+            services.AddTransient<IUserRepository, UserRepository>();
+ 
             return services;
         }
 
         public static IServiceCollection AddServices(this IServiceCollection services)
         {
-            services.AddTransient<IMemberService, MemberService>();
             services.AddTransient<IUserService, UserService>();
+            services.AddTransient<IMemberService, MemberService>();
+            
             return services;
         }
 
